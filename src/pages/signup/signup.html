@@ -1,0 +1,53 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>signup</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  <ion-content class="bg-style">
+  <img src="assets/imgs/chaabilldlogo.png" class="logo"/>
+  <br/>
+  <br/>
+  
+      
+          <ion-list>
+           <ion-item>
+              <ion-label stacked>E-mail(*champ obligatoire)</ion-label>
+              
+              <ion-input type="email" [(ngModel)]="email" name="email" placeholder="eg. john@doe.com" required="required"></ion-input>
+        
+            <br/>
+            <br/>
+            </ion-item>
+            <ion-item >
+                <ion-label stacked>Numéro de télephone</ion-label>
+                <ion-input type="text" [(ngModel)]="phone" name="phone" placeholder="eg. 0622222222" ></ion-input>
+              </ion-item>
+        
+        
+      
+            <ion-item>
+              <ion-label stacked>Mot de passe(*champ obligatoire)</ion-label>
+              <ion-input type="password" [(ngModel)]="password" name="password"required="required"></ion-input>
+            </ion-item> 
+           
+            <ion-item>
+              <ion-label stacked>Prénom</ion-label>
+              <ion-input type="text" [(ngModel)]="first_name" name="first_name"></ion-input>
+            </ion-item>
+      
+            <ion-item>
+              <ion-label stacked>Nom</ion-label>
+              <ion-input id="Nom" type="text" [(ngModel)]="last_name" name="last_name" required #uname="ngModel"></ion-input>
+            
+            </ion-item>
+      
+            <div padding text-center>
+              <button ion-button color="energy" round (click)="doSignup()">Se connecter</button>
+            </div>
+      
+          </ion-list> 
+        </ion-content>
+         
+           

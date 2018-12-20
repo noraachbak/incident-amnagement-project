@@ -1,0 +1,66 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content class="bg-style">
+
+    <br/>
+    <br/>
+  <!-- <div class="splash-logo"></div> -->
+  <img src="assets/imgs/chaabilldlogo.png" class="logo"/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  
+  
+  <div padding text-center> 
+      <ion-list>
+        <ion-item>
+          <ion-label stacked>E-mail</ion-label> 
+          <ion-input type="email" [(ngModel)]="email" name="email"  required="required" ></ion-input>
+          <div class="error" ng-message="required">
+            <i class="ion-information-circled"></i> 
+            This field is required!
+          </div>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label stacked>Mot de passe</ion-label>
+          <ion-input type="password" [(ngModel)]="password" name="password" required="required"></ion-input>
+        </ion-item>
+        <br/>
+  <br/>
+       
+  
+        <div padding text-center>
+         
+           <button *ngIf="email && password " ion-button color="energy" round (click)="submitLogin()">
+            Se connecter</button>
+          <!-- Show dead button if form is not filled -->
+          <button *ngIf="!email && !password" ion-button color="energy" >Se connecter</button>
+          
+          
+        </div>
+       
+        
+  
+      </ion-list>
+      </div>
+    
+     <br/>
+     <div padding text-center>
+        <button ion-button color="black" block clear (click)="forgotPassword()">Mot de pass oublié?</button>
+      </div>
+   
+      
+        <div padding text-center>
+          <button ion-button color="energy" block clear (click)="redirectToSignup()">Créer un compte</button>
+        </div>
+
+</ion-content>

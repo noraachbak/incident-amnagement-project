@@ -1,0 +1,47 @@
+
+<ion-content class="bg-style">
+  <ion-header>
+  
+    <ion-navbar>
+   
+        
+        <img src="assets/imgs/chaabilldlogo.png" class="logo" />
+        <!-- <ion-buttons end>
+          <button ion-button icon-only (click)="gotoProfile()">
+             <ion-icon ios="ios-person" md="md-person"></ion-icon>
+          </button>
+        </ion-buttons> -->
+        <ion-buttons end>
+        <button ion-button  round outline color="black"(click)="gotoProfile()">Consulter l'état De Demande</button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+
+  
+  
+  <p style="text-align: center ; color:grey;font-size: 100%">LA LOCATION LONGUE DUREE EN TOUTE SIMPLICITE</p>
+  <br/>
+  <br/>
+  <img class="image" src="assets/imgs/pho.jpg "width="1500" height="350" />
+  
+    <p style="text-align: center ; color:red;font-size: 250%">Bienvenu sur Application Gestion des Incidents CHAABILLD</p>
+    
+  
+        <ion-slides class="image-slider" loop="true" slidesPerView="2">
+            
+          <ion-slide *ngFor="let img of images">
+              <!-- <a ng-click="fonction()"> -->
+                  <!-- <a onClick="alert('It worked');" >  -->
+                      <a (click)="fonction()">
+            <img src="assets/imgs/{{img}}"    />
+            
+        
+        </a>
+            
+          </ion-slide>
+        </ion-slides>
+  
+  </ion-content>
+  
+  

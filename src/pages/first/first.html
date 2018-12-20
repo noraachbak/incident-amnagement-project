@@ -1,0 +1,130 @@
+
+ <ion-header>
+
+    <ion-navbar>
+      <ion-title>Déclarer Un Incident</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+<ion-content padding>
+    <ion-item>
+        
+           
+        <ion-label style="color: black;font-size:16px">Choisir le type d'incident: </ion-label>
+      <br/>
+      <br/>
+      <br/>
+  
+        <ion-select [(ngModel)]="typeincident" style="text-align: center" multiple="true" cancelText="Quitter" okText="Valider">
+          <ion-option  value="Mobilier" selected="true">Mobilier</ion-option>
+          <ion-option value="Electrique">Electrique</ion-option>
+          <ion-option value="Plomberie" selected="true">Plomberie</ion-option>
+          <ion-option value="Réseau">Réseau</ion-option>
+          <ion-option value="Ordinateur">Ordinateur</ion-option>
+          <ion-option value="Imprimante">Imprimante</ion-option>
+          <ion-option value="Windows">Windows</ion-option>
+          <ion-option value="LogPro">LogPro</ion-option>
+          <ion-option value="Logiciel de Comptabilité">Logiciel de Comptabilité</ion-option>
+          <ion-option value="Télephonie">Télephonie</ion-option>
+        </ion-select>
+      </ion-item>
+
+      
+      <ion-item>
+        <ion-label floating>Description:</ion-label>
+        <ion-input [(ngModel)]="Description" type="text" value="" [formControl]="authForm.controls['username']" [ngClass]="{'error-border':!authForm.controls['username'].valid}"></ion-input>
+      </ion-item><br/>
+      <div style="color: red" class="error-box" *ngIf="authForm.controls['username'].hasError('required') && authForm.controls['username'].touched">* Ce champ est Obligatoire!</div>
+      <div  style="color: red"class="error-box" *ngIf="authForm.controls['username'].hasError('minlength') && authForm.controls['username'].touched">* Minimum username length is 5!</div>
+      <div style="color: red" class="error-box" *ngIf="authForm.controls['username'].hasError('maxlength') && authForm.controls['username'].touched">* Maximum username length is 50!</div>
+      
+      
+      <ion-item>
+        <ion-label floating>Sujet:</ion-label>
+        <ion-input [(ngModel)]="Sujet" type="text" value="" [formControl]="authForm.controls['password']"></ion-input>
+      </ion-item><br/>
+      <div  style="color: red"class="error-box" *ngIf="authForm.controls['password'].hasError('required') && authForm.controls['password'].touched">* Ce champ est Obligatoire!</div>
+      <div  style="color: red" class="error-box" *ngIf="authForm.controls['password'].hasError('minlength') && authForm.controls['password'].touched">* Minimum username length is 5!</div>
+     
+      
+      <ion-item>
+        <ion-label floating>Saisir Ton Nom d'utlisateur:</ion-label>
+        <ion-input [(ngModel)]="Nomutilisateur" type="text" value="" [formControl]="authForm.controls['Nop']"></ion-input>
+      </ion-item><br/>
+      <div  style="color: red"class="error-box" *ngIf="authForm.controls['Nop'].hasError('required') && authForm.controls['Nop'].touched">* Ce champ est Obligatoire!</div>
+      <div  style="color: red"class="error-box" *ngIf="authForm.controls['Nop'].hasError('minlength') && authForm.controls['Nop'].touched">* Minimum username length is 5!</div>
+      
+      
+      <ion-item>
+        <ion-label floating>Saisir Ton Email:</ion-label>
+        <ion-input [(ngModel)]="Em" type="text" value="" [formControl]="authForm.controls['Des']"></ion-input>
+      </ion-item><br/>
+      <div  style="color: red"class="error-box" *ngIf="authForm.controls['Des'].hasError('required') && authForm.controls['Des'].touched">* Ce champ est Obligatoire!</div>
+      <div  style="color: red"class="error-box" *ngIf="authForm.controls['Des'].hasError('minlength') && authForm.controls['Des'].touched">* Minimum username length is 5!</div>
+      <ion-item>
+          <ion-label floating>Destinatire:</ion-label>
+          <ion-input [(ngModel)]="Destinataire" type="text" value="" [formControl]="authForm.controls['Destinataire']"></ion-input>
+        </ion-item><br/>
+        <div  style="color: red"class="error-box" *ngIf="authForm.controls['Destinataire'].hasError('required') && authForm.controls['Destinataire'].touched">* Ce champ est Obligatoire!</div>
+        <div  style="color: red"class="error-box" *ngIf="authForm.controls['Destinataire'].hasError('minlength') && authForm.controls['Destinataire'].touched">* Minimum username length is 5!</div>
+
+
+        <ion-item>
+            <ion-label floating>Cc:</ion-label>
+            <ion-input [(ngModel)]="Copieemail" type="text" value="" [formControl]="authForm.controls['copier']"></ion-input>
+          </ion-item><br/>
+          <div style="color: red" class="error-box" *ngIf="authForm.controls['copier'].hasError('required') && authForm.controls['copier'].touched">* Ce champ est Obligatoire!</div>
+          <div style="color: red" class="error-box" *ngIf="authForm.controls['copier'].hasError('minlength') && authForm.controls['copier'].touched">* Minimum username length is 5!</div>
+          
+
+          <ion-item>
+            <ion-label floating>Etat De Demande:</ion-label>
+            <ion-input [(ngModel)]="etatdedemande" type="text" value="text"disabled="disabled" ></ion-input>
+          </ion-item><br/>
+         
+          
+          <ion-item>
+              <ion-label style="color: black;font-size:16px ">Priorité</ion-label>
+              <ion-select [(ngModel)]="Priorite" style="margin-left:80px">
+                <ion-option value="Eleve">Elevé</ion-option>
+                <ion-option value="Moyenne">Moyenne</ion-option>
+                <ion-option value="Basse">Basse</ion-option>
+              </ion-select>
+
+              
+              
+            </ion-item>
+            <br/>
+            <br/>
+            <!-- <form method="post" enctype="multipart/form-data">
+              <div>
+                <label for="profile_pic"style="font-size:16px;">Choisir un fichier:</label>
+                <input [(ngModel)]="attachement" type="file" id="profile_pic" name="profile_pic"
+                      accept=".jpg, .jpeg, .png">
+              </div> -->
+              <!-- <div>
+                <button ion-button block (click)="choose()">Upload a file</button>
+              </div> -->
+
+              Uploaded File: <a class="url" *ngIf="this.url" href="{{this.url}}">{{this.url}}</a>
+
+              <button ion-button color="energy" round (click)="chooseFile()">Upload Image</button>
+              <input  [(ngModel)]="images" style="display: none;" id="image" name="image" type="file" (change)="upload()">
+            
+              
+              <br/>
+              <br/>
+            <div>
+              <button  ion-button color="energy" round (click)="Envoyer(typeincident,Description,Sujet,Destinataire,Copieemail,Priorite,Nomutilisateur,Em,url,etatdedemande)"style="margin-left:20px">
+                Envoyer</button>
+              
+           </div>
+           
+               
+
+                <ion-content>
+        
+     
+     
+    
